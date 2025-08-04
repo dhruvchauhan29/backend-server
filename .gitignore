@@ -7,14 +7,25 @@
 # === Maven Target Folder ===
 target/
 
+# === Gradle Build Folder (if using Gradle) ===
+build/
+
 # === Maven Wrapper ===
 .mvn/wrapper/maven-wrapper.jar
 
-# Keep target folders in source directories if needed
+# === Keep target folders in source directories if needed ===
 !**/src/main/**/target/
 !**/src/test/**/target/
+!**/src/main/**/build/
+!**/src/test/**/build/
 
-# === STS ===
+# === IntelliJ IDEA ===
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# === Eclipse / STS ===
 .apt_generated
 .classpath
 .factorypath
@@ -23,29 +34,28 @@ target/
 .springBeans
 .sts4-cache
 
-# === IntelliJ IDEA ===
-.idea/
-*.iws
-*.iml
-*.ipr
-
 # === NetBeans ===
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
 # === VS Code ===
 .vscode/
 
-# === OS Generated ===
+# === OS Generated Files ===
 .DS_Store
 Thumbs.db
 
 # === Env/Secrets Files ===
 .env
 src/main/resources/application.properties
+src/main/resources/application-dev.properties
+src/main/resources/application-prod.properties
+
+# === Logs ===
+*.log
+
+# === AWS credentials or local AWS config (if any) ===
+.aws/
